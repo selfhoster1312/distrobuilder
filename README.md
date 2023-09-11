@@ -1,11 +1,20 @@
 # distrobuilder
+
+<p align="center">
+  <img height="100" width="100" src=".sphinx/_static/download/containers.small.png">
+</p>
+<p align="center">
+  <a href="https://github.com/lxc/distrobuilder/actions"><img src="https://github.com/lxc/distrobuilder/workflows/CI%20tests/badge.svg"></a>
+  <a href=https://bestpractices.coreinfrastructure.org/projects/1728"><img src="https://bestpractices.coreinfrastructure.org/projects/1728/badge"></a>
+</p>
+
 System container image builder for LXC and LXD
 
 ## Status
 Type            | Service               | Status
 ---             | ---                   | ---
-CI              | GitHub                | [![Build Status](https://github.com/lxc/distrobuilder/workflows/CI%20tests/badge.svg)](https://github.com/lxc/distrobuilder/actions)
-Project status  | CII Best Practices    | [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1728/badge)](https://bestpractices.coreinfrastructure.org/projects/1728)
+CI              | GitHub                | 
+Project status  | CII Best Practices    | 
 
 
 ## Command line options
@@ -44,49 +53,9 @@ Use "distrobuilder [command] --help" for more information about a command.
 ```
 <!-- Include end CLI -->
 
-<!-- Include start installing -->
-## Installing from package
+## Installation
 
-`distrobuilder` is available from the [Snap Store](https://snapcraft.io/distrobuilder).
-
-```
-sudo snap install distrobuilder --classic
-```
-
-## Installing from source
-
-To compile `distrobuilder` from source, first install the Go programming language, and some other dependencies.
-
-- Debian-based:
-    ```
-    sudo apt update
-    sudo apt install -y golang-go debootstrap rsync gpg squashfs-tools git
-    ```
-- ArchLinux-based:
-    ```
-    sudo pacman -Syu
-    sudo pacman -S go debootstrap rsync gnupg squashfs-tools git --needed
-    ```
-
-Second, download the source code of the `distrobuilder` repository (this repository).
-
-```
-git clone https://github.com/lxc/distrobuilder
-```
-
-Third, enter the directory with the source code of `distrobuilder` and run `make` to compile the source code. This will generate the executable program `distrobuilder`, and it will be located at `$HOME/go/bin/distrobuilder`.
-
-```
-cd ./distrobuilder
-make
-```
-
-Finally, you can run `distrobuilder` as follows. You may also add to your $PATH the directory `$HOME/go/bin/` so that you do not need to run the command with the full path.
-
-```
-$HOME/go/bin/distrobuilder
-```
-<!-- Include end installing -->
+See [doc/howto/install.md](doc/howto/install.md) for instructions.
 
 ## How to use
 
@@ -95,3 +64,29 @@ See [How to use `distrobuilder`](doc/howto/build.md) for instructions.
 ## Troubleshooting
 
 See [Troubleshoot `distrobuilder`](doc/howto/troubleshoot).
+[![LXD](../.sphinx/_static/download/containers.png)](https://linuxcontainers.org/lxd)
+
+# `distrobuilder`
+
+`distrobuilder` is an image building tool for LXC and LXD.
+
+Its modern design uses pre-built official images whenever available and supports a variety of modifications on the base image.
+`distrobuilder` creates LXC or LXD images, or just a plain root file system, from a declarative image definition (in YAML format) that defines the source of the image, its package manager, what packages to install or remove for specific image variants, OS releases and architectures, as well as additional files to generate and arbitrary actions to execute as part of the image build process.
+
+`distrobuilder` can be used to create custom images that can be used as the base for LXC containers or LXD instances.
+
+The LXD team uses `distrobuilder` to build the images on the [Linux containers image server](https://images.linuxcontainers.org/).
+You can also use it to build images from ISO files that require licenses and therefore cannot be distributed.
+
+## Project and community
+
+`distrobuilder` is free software and developed under the [Apache 2 license](https://www.apache.org/licenses/LICENSE-2.0).
+It's an open source project that warmly welcomes community projects, contributions, suggestions, fixes and constructive feedback.
+
+The LXD project is sponsored by [Canonical Ltd](https://www.canonical.com).
+
+- [Code of Conduct](https://github.com/lxc/lxd/blob/master/CODE_OF_CONDUCT.md) <!-- wokeignore:rule=master -->
+- [Contribute to the project](https://github.com/lxc/distrobuilder/blob/master/CONTRIBUTING.md)  <!-- wokeignore:rule=master -->
+- [Discuss on IRC](https://web.libera.chat/#lxc) (see [Getting started with IRC](https://discuss.linuxcontainers.org/t/getting-started-with-irc/11920) if needed)
+- [Ask and answer questions on the forum](https://discuss.linuxcontainers.org)
+- [Join the mailing lists](https://lists.linuxcontainers.org)

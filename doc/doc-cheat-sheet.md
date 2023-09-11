@@ -542,21 +542,20 @@ By combining file inclusion and substitutions, you can even replace parts of the
   - Output
 * - ````
 
-    % Include parts of the content from file [../README.md](../README.md)
-    ```{include} ../README.md
+    % Include parts of the content from file [howto/install.md](howto/install.md)
+    ```{include} howto/install.md
        :start-after: Installing from source
-       :end-before: Second, download the source code
+       :end-before: Clone the source repository
     ```
 
     ````
 
   -
-    % Include parts of the content from file [../README.md](../README.md)
-    ```{include} ../README.md
+    % Include parts of the content from file [howto/install.md](howto/install.md)
+    ```{include} howto/install.md
        :start-after: Installing from source
-       :end-before: Second, download the source code
+       :end-before: Clone the source repository
     ```
-
 `````
 
 Adhere to the following convention:

@@ -74,3 +74,11 @@ Sorry, no pseudonyms or anonymous contributions are allowed.
 
 We also require each commit be individually signed-off by their author,
 even when part of a larger set. You may find `git commit -s` useful.
+
+## Documentation
+
+The [documentation site](https://linuxcontainers.org/distrobuilder/docs/latest/) is built with [sphinx](https://www.sphinx-doc.org/) using the [myst markdown parser](https://myst-parser.readthedocs.io/). These projects both have extensive documentation to help you make contributions.
+
+To build the documentation site, run `make doc` from the repository. It will install all the required dependencies in a python virtualenv (requires internet access), and will generate the output in the `doc/html` folder. You can then open it with any web browser, like so: `xdg-open doc/html/index.html`.
+
+Once you have the dependencies setup, you can use the `make doc-incremental` command to make the build faster.
